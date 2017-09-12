@@ -13,4 +13,17 @@ spec:
     path: /tmp/data/lv-1
   PersistentVolumeReclaimPolicy: Recycle
 ---
-apiVersion
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: local-volume-2
+  labels:
+    type: local
+spec:
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: /tmp/data/lv-2
+  PersistentVolumeReclaimPolicy: Recycle
